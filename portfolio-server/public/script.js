@@ -40,5 +40,9 @@ document.getElementById('contact-form').addEventListener('submit', function(even
           formMessage.textContent = 'An error occurred. Please try again.';
           formMessage.style.color = 'red';
           formMessage.style.display = 'block';
+
+          setTimeout(() => {
+            formMessage.style.display = 'none';
+        }, 5000);
       });
 });
