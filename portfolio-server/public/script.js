@@ -11,7 +11,6 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     });
 });
 
-
 document.getElementById('contact-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -36,13 +35,19 @@ document.getElementById('contact-form').addEventListener('submit', function(even
               form.reset();
           }
           formMessage.style.display = 'block';
+          
+          // Hide the message after 5 seconds
+          setTimeout(() => {
+              formMessage.style.display = 'none';
+          }, 5000);
       }).catch(error => {
           formMessage.textContent = 'An error occurred. Please try again.';
           formMessage.style.color = 'red';
           formMessage.style.display = 'block';
-
+          
+          // Hide the message after 5 seconds
           setTimeout(() => {
-            formMessage.style.display = 'none';
-        }, 5000);
+              formMessage.style.display = 'none';
+          }, 5000);
       });
 });
